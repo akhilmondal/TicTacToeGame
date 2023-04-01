@@ -10,33 +10,106 @@ public class TicTacToeGame {
             {' ', '|', ' ', '|', ' '},
             {'_', '+', '_', '+', '_'},
             {' ', '|', ' ', '|', ' '}};
-    void selectLetter(){
+
+    char selectLetter() {
         Scanner input = new Scanner(System.in);
         System.out.println("Select any letter in between X or O: ");
-        String letter = input.nextLine();
-        System.out.println("selected letter is :  "+letter);
-        if(letter.toLowerCase().equals("x")){
-            System.out.println("and Computer will choose: O");
-        } else if (letter.toLowerCase().equals("o")) {
-            System.out.println("and Computer will choose: X");
-        }
+        char letter = input.next().charAt(0);
+        System.out.println("selected letter is :  " + letter);
+        return letter;
     }
-    void printgameboard(char[][] gameboard) {
+
+    static void printgameboard(char[][] gameboard) {
 
         for (char[] row : gameBoard) {
-            for (char column : row){
+            for (char column : row) {
                 System.out.print("  " + column);
             }
             System.out.println("  ");
         }
     }
 
+    static void playerMove(char[][] gameboard, int position, String player, char letter) {
+
+        switch (position) {
+            case 1:
+                if (gameboard[0][0] != ' ') {
+                    System.out.println("The chosen index is not empty");
+                } else {
+                    gameboard[0][0] = letter;
+                }
+                break;
+            case 2:
+                if (gameboard[0][2] != ' ') {
+                    System.out.println("The chosen index is not empty");
+                } else {
+                    gameboard[0][2] = letter;
+                }
+                break;
+            case 3:
+                if (gameboard[0][4] != ' ') {
+                    System.out.println("The chosen index is not empty");
+                } else {
+                    gameboard[0][4] = letter;
+                }
+                break;
+            case 4:
+                if (gameboard[2][0] != ' ') {
+                    System.out.println("The chosen index is not empty");
+                } else {
+                    gameboard[2][0] = letter;
+                }
+                break;
+            case 5:
+                if (gameboard[2][2] != ' ') {
+                    System.out.println("The chosen index is not empty");
+                } else {
+                    gameboard[2][2] = letter;
+                }
+                break;
+            case 6:
+                if (gameboard[2][4] != ' ') {
+                    System.out.println("The chosen index is not empty");
+                } else {
+                    gameboard[2][4] = letter;
+                }
+                break;
+            case 7:
+                if (gameboard[4][0] != ' ') {
+                    System.out.println("The chosen index is not empty");
+                } else {
+                    gameboard[4][0] = letter;
+                }
+                break;
+            case 8:
+                if (gameboard[4][2] != ' ') {
+                    System.out.println("The chosen index is not empty");
+                } else {
+                    gameboard[4][2] = letter;
+                }
+                break;
+            case 9:
+                if (gameboard[4][4] != ' ') {
+                    System.out.println("The chosen index is not empty");
+                } else {
+                    gameboard[4][4] = letter;
+                }
+                break;
+            default:
+                break;
+        }
+        printgameboard(gameboard);
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to TIC TAC TOE Game ");
         TicTacToeGame game = new TicTacToeGame();
-        game.printgameboard(gameBoard);
-        game.selectLetter();
-
+        printgameboard(gameBoard);
+        char letter = game.selectLetter();
+        System.out.println("Enter your selected position from 1 to 9 for gameboard ");
+        Scanner select = new Scanner(System.in);
+        int position = select.nextInt();
+        playerMove(gameBoard, position, "Akhil", letter);
     }
 
 }
