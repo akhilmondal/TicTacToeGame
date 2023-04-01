@@ -10,15 +10,6 @@ public class TicTacToeGame {
             {' ', '|', ' ', '|', ' '},
             {'_', '+', '_', '+', '_'},
             {' ', '|', ' ', '|', ' '}};
-    void printgameboard(char[][] gameboard) {
-
-        for (char[] row : gameBoard) {
-            for (char column : row){
-                System.out.print("  " + column);
-            }
-            System.out.println("  ");
-        }
-    }
     void selectLetter(){
         Scanner input = new Scanner(System.in);
         System.out.println("Select any letter in between X or O: ");
@@ -28,6 +19,15 @@ public class TicTacToeGame {
             System.out.println("and Computer will choose: O");
         } else if (letter.toLowerCase().equals("o")) {
             System.out.println("and Computer will choose: X");
+        }
+    }
+    void printgameboard(char[][] gameboard) {
+
+        for (char[] row : gameBoard) {
+            for (char column : row){
+                System.out.print("  " + column);
+            }
+            System.out.println("  ");
         }
     }
 
