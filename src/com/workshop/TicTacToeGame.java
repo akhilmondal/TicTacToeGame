@@ -100,6 +100,78 @@ public class TicTacToeGame {
         }
         printgameboard(gameboard);
     }
+    static void checkFreeSpace(char[][] gameboard) {
+        for (int i = 1; i<= 9; i++) {
+            switch (i) {
+                case 1:
+                    if (gameboard[0][0] != ' ') {
+                        System.out.println("The 1st index is not empty: ");
+                    } else {
+                        System.out.println("The 1st index is empty: ");
+                    }
+                    break;
+                case 2:
+                    if (gameboard[0][2] != ' ') {
+                        System.out.println("The 2nd index is not empty: ");
+                    } else {
+                        System.out.println("The 2nd index is empty: ");
+                    }
+                    break;
+                case 3:
+                    if (gameboard[0][4] != ' ') {
+                        System.out.println("The 3rd index is not empty: ");
+                    } else {
+                        System.out.println("The 3rd index is empty: ");
+                    }
+                    break;
+                case 4:
+                    if (gameboard[2][0] != ' ') {
+                        System.out.println("The 4th index is not empty: ");
+                    } else {
+                        System.out.println("The 4th index is empty: ");
+                    }
+                    break;
+                case 5:
+                    if (gameboard[2][2] != ' ') {
+                        System.out.println("The 5th index is not empty: ");
+                    } else {
+                        System.out.println("The 5th index is empty: ");
+                    }
+                    break;
+                case 6:
+                    if (gameboard[2][4] != ' ') {
+                        System.out.println("The 6th index is not empty: ");
+                    } else {
+                        System.out.println("The 6th index is empty: ");
+                    }
+                    break;
+                case 7:
+                    if (gameboard[4][0] != ' ') {
+                        System.out.println("The 7th index is not empty: ");
+                    } else {
+                        System.out.println("The 7th index is empty: ");
+                    }
+                    break;
+                case 8:
+                    if (gameboard[4][2] != ' ') {
+                        System.out.println("The 8th index is not empty: ");
+                    } else {
+                        System.out.println("The 8th index is empty: ");
+                    }
+                    break;
+                case 9:
+                    if (gameboard[4][4] != ' ') {
+                        System.out.println("The 9th index is not empty: ");
+                    } else {
+                        System.out.println("The 9th index is empty: ");
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+        printgameboard(gameboard);
+    }
 
     public static void main(String[] args) {
         System.out.println("Welcome to TIC TAC TOE Game ");
@@ -110,6 +182,7 @@ public class TicTacToeGame {
         Scanner select = new Scanner(System.in);
         int position = select.nextInt();
         playerMove(gameBoard, position, "Akhil", letter);
+        checkFreeSpace(gameBoard);
     }
 
 }
